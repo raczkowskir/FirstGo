@@ -1,9 +1,26 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"strconv"
+	"log"
+	"os"
 )
+
+//some fake comment
+
+func main() {
+	fmt.Println("Podaj liczbe:")
+
+	reader := bufio.NewReader(os.Stdin)
+	imput, dupa := reader.ReadString('\n')
+
+	if dupa == nil {
+		fmt.Println("Twoja liczba to: ", imput)
+	} else {
+		log.Fatal(dupa)
+	}
+}
 
 //func main() {
 //	//fmt.Println("do we have a fun?")
@@ -31,23 +48,20 @@ import (
 
 /////////////////////////
 
-
-func main() {
-	funkcjaBioracaTypInterface(typInteger(999))
-}
-
-type typInterface interface {
-	metodaWykonywalnaNaTypInteger() string
-}
-type typInteger int
-
-
-func funkcjaBioracaTypInterface(newtypInterface typInterface) {
-	fmt.Print(newtypInterface.metodaWykonywalnaNaTypInteger())
-}
-
-func (newTypInteger typInteger) metodaWykonywalnaNaTypInteger() string {
-	zmienna := "moja zmienna to: "
-	var t = strconv.Itoa(int(newTypInteger))
-	return  zmienna + t
-}
+//func main() {
+//	funkcja1(typInterface("I to jest obiektowosc"))
+//}
+//
+//type typInterface interface {
+//	metodaWykonywalnaNaTypInteger() string
+//}
+//type typString string
+//
+//
+//func funkcja1(newtypInterface typInterface) {
+//	fmt.Print(newtypInterface.metodaWykonywalnaNaTypInteger())
+//}
+//
+//func (newTypString typString) metodaWykonywalnaNaTypInteger() typString {
+//	return  newTypString
+//}
