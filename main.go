@@ -7,8 +7,6 @@ import (
 	"os"
 )
 
-//some fake comment
-
 func main() {
 	fmt.Println("Podaj liczbe:")
 
